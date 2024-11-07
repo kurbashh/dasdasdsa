@@ -1,0 +1,30 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('theaters/', views.TheaterListAPIView.as_view(), name='theater-list'),
+    path('theaters/<int:pk>/', views.TheaterDetailAPIView.as_view(), name='theater-detail'),
+    path('main-images/', views.MainImagesListAPIView.as_view(), name='main-images-list'),
+    path('main-images/<int:pk>/', views.MainImagesDetailAPIView.as_view(), name='main-images-detail'),
+    path('performance-files/', views.PerformanceFilesListAPIView.as_view(), name='performance-files-list'),
+    path('performance-files/<int:pk>/', views.PerformanceFilesDetailAPIView.as_view(), name='performance-files-detail'),
+    path('performances/', views.PerformanceListAPIView.as_view(), name='performance-list'),
+    path('performances/<int:pk>/', views.PerformanceDetailAPIView.as_view(), name='performance-detail'),
+    path('performance-creatives/', views.PerformanceCreativesListAPIView.as_view(), name='performance-creatives-list'),
+    path('performance-creatives/<int:pk>/', views.PerformanceCreativesDetailAPIView.as_view(), name='performance-creatives-detail'),
+    path('performers/', views.PerformersListAPIView.as_view(), name='performers-list'),
+    path('performers/<int:pk>/', views.PerformersDetailAPIView.as_view(), name='performers-detail'),
+    path('conductors/', views.ConductorListAPIView.as_view(), name='conductors-list'),
+    path('conductors/<int:pk>/', views.ConductorDetailAPIView.as_view(), name='conductors-detail'),
+    path('backstage-blocks/', views.BackstageBlockListAPIView.as_view(), name='backstage-blocks-list'),
+    path('backstage-blocks/<int:pk>/', views.BackstageBlockDetailAPIView.as_view(), name='backstage-blocks-detail'),
+    path('backstages/', views.BackstageListAPIView.as_view(), name='backstages-list'),
+    path('backstages/<int:pk>/', views.BackstageDetailAPIView.as_view(), name='backstages-detail'),
+    path('seats/', views.SeatListAPIView.as_view(), name='seats-list'),
+    path('seats/<int:pk>/', views.SeatDetailAPIView.as_view(), name='seats-detail'),
+    path('rows/', views.RowListAPIView.as_view(), name='rows-list'),
+    path('rows/<int:pk>/', views.RowDetailAPIView.as_view(), name='rows-detail'),
+    path('tickets/', views.TicketListAPIView.as_view(), name='tickets-list'),
+    path('tickets/<int:pk>/', views.TicketDetailAPIView.as_view(), name='tickets-detail'),
+    path('buy-ticket/', views.BuyTicketAPIView.as_view(), name='buy-ticket'),
+]

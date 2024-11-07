@@ -1,0 +1,1391 @@
+/* Подключаем шрифт Museo Cyrl 500 */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif; 
+}
+
+div#root {
+  /* width: 100vw; */
+  height: 100vh;
+}
+
+
+.nav-selectors{
+  display: flex;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: absolute; /* Изменено на абсолютное позиционирование */
+  width: 100vw;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+.navbar-logo img {
+  width: 14vw;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  position: relative;
+}
+
+.menu-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: transparent; /* Прозрачный фон */
+  color: inherit; /* Цвет текста зависит от темы */
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-button:hover {
+  color: #da291c; /* Цвет при наведении */
+}
+
+/* Стили для выпадающего меню */
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: rgba(255, 255, 255, 0.95); /* Полупрозрачный фон */
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1001; /* Обеспечиваем, что меню выше всех элементов */
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #da291c; /* Изменение фона при наведении */
+  color: white;
+}
+
+/* Адаптация для светлой и темной темы навбара */
+.navbar-light .menu-button {
+  color: #fff;
+}
+
+.navbar-dark .menu-button {
+  color: #333;
+}
+
+.navbar-dark .dropdown-menu {
+  background-color: rgba(51, 51, 51, 0.95); /* Темный фон */
+}
+
+.navbar-dark .dropdown-menu li {
+  color: #fff;
+}
+
+.navbar-dark .dropdown-menu li:hover {
+  background-color: #b51f16;
+}
+
+
+
+
+
+
+/* Общие стили для всех секций */
+.homepage {
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero-section{
+  padding: 0;
+}
+
+
+/* Info Sections */
+.info-section {
+  background-color: #f4f4f4;
+}
+
+.info-section h2 {
+  font-size: 1.8vw;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: #da291c;
+}
+
+.info-section p {
+  font-size: 1.3vw;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-slider {
+  flex: 1;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.info-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.read-more-button{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #da291c; /* Изменен основной цвет */
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.read-more-button:hover {
+  background-color: #b51f16; /* Более темный оттенок при наведении */
+}
+
+/* Performances Section */
+.performances-section {
+  padding: 100px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.performances-section h2 {
+  font-size: 1.8vw;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.performance-slide {
+  padding: 7px;
+}
+
+.performance-card {
+  background-color: #fff;
+  overflow: hidden;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  transition:  0.3s ease;
+  text-align: left;
+  max-width: 900px; /* Ограничиваем ширину */
+  margin: 0 auto; /* Центрируем слайд */
+  cursor: pointer;
+}
+
+.performance-card:hover {
+  opacity: 0.96;
+  /* Приподнять карточку */
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); Увеличить тень */
+}
+
+.performance-image {
+  width: 100%;
+  height: 200px; /* Фиксированная высота изображения */
+  object-fit: cover;
+  border-bottom: 4px solid #b51f16;
+}
+
+.performance-info {
+  padding: 20px 5px;
+}
+
+.text-and-image-container {
+  display: flex;
+  align-items: center; /* Выравнивание по вертикали */
+  justify-content: space-between; /* Пространство между текстом и изображением */
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto; /* Центрирование контента */
+}
+
+
+
+.text-content {
+  flex: 1;
+  margin-right: 20px; /* Отступ между текстом и изображением */
+  text-align: left;
+
+}
+
+
+.text-content h2{
+  font-weight: 400;
+  
+}
+.image-content {
+  flex: 1;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  /* border-radius: 10px; Округляем углы изображения */
+}
+
+@media (max-width: 768px) {
+  .text-and-image-container {
+    flex-direction: column; /* Перестраиваем текст и фото в колонку на маленьких экранах */
+  }
+
+  .text-content {
+    margin-right: 0;
+    margin-bottom: 20px; /* Отступ снизу для текста */
+  }
+}
+
+
+.performance-info h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  height: 60px;
+}
+
+.performance-info p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+
+/* Hover эффекты на кнопке или тексте */
+.performances-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #da291c; /* Изменен основной цвет */
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.performances-button:hover {
+  background-color: #b51f16; /* Более темный оттенок при наведении */
+}
+
+/* Backstages Section */
+.backstages-section {
+  padding: 100px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.backstages-section h2 {
+  font-size: 1.8vw;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.backstage-slide {
+  padding: 7px;
+}
+
+.backstage-card {
+  background-color: #fff;
+  overflow: hidden;
+  transition: 0.3s ease;
+  text-align: left;
+  max-width: 900px; /* Ограничиваем ширину */
+  margin: 0 auto; /* Центрируем слайд */
+  cursor: pointer;
+}
+
+.backstage-card:hover {
+  opacity: 0.96;
+}
+
+.backstage-image {
+  width: 100%;
+  height: 200px; /* Фиксированная высота изображения */
+  object-fit: cover;
+  border-bottom: 4px solid #b51f16;
+}
+
+.backstage-info {
+  padding: 20px 5px;
+}
+
+.backstage-info h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+.backstage-info p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+
+/* Hover эффекты на кнопке или тексте */
+.backstages-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #da291c; /* Изменен основной цвет */
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.backstages-button:hover {
+  background-color: #b51f16; /* Более темный оттенок при наведении */
+}
+
+
+
+.slider-container {
+  position: relative; /* Позволяет дочерним элементам позиционироваться относительно этого контейнера */
+  width: 100%;
+  height: 80vh;
+}
+
+.slide {
+  height: 80vh;
+  color: white;
+  position: relative; /* Позволяет позиционировать точки внутри слайда */
+}
+
+.back-img img{
+  width: 100%;
+  height: 80vh;
+  object-fit: cover; 
+}
+
+.content{
+  width: 100%;
+  padding: 0px 0px 100px 100px;
+  position: absolute;
+  bottom: 0;
+  text-align: left;
+}
+
+.content h2 {
+  font-size: 1.8vw;
+}
+
+.content p {
+  font-size: 2.5vw;
+}
+
+.content button {
+  margin-top: 20px;
+  padding: 15px 20px;
+  font-size: 0.8vw;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  color: black;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.content button:hover {
+  background-color: #da291c; /* Меняем цвет фона на красный при наведении */
+  color: white; /* Меняем цвет текста на белый */
+  /* transform: scale(1.05); Немного увеличиваем кнопку */
+}
+
+
+/* Стили для точек навигации */
+.slick-dots {
+  position: absolute; /* Позиционируем точки относительно слайда */
+  bottom: 20px; /* Отступ от нижней части слайда */
+  left: 50%; /* Центрируем точки по горизонтали */
+  transform: translateX(-50%); /* Центрируем точки */
+  z-index: 2; /* Убедимся, что точки находятся поверх фона */
+}
+
+.slick-dots li button:before {
+  font-size: 15px; /* Размер точек */
+  color: white; /* Цвет точек */
+  opacity: 0.4; /* Прозрачность по умолчанию */
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1; /* Прозрачность активной точки */
+}
+
+.custom-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%; */
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.custom-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.custom-arrow.left {
+  left: 10px;
+  top: 50%;
+  /* transform: translateY(-50%); */
+}
+
+.custom-arrow.right {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}  
+
+
+/* Основные стили для футера */
+.footer {
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Логотип и описание */
+.footer-about {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Навигационные ссылки */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  color: #f4f4f4;
+  font-size: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #da291c;
+}
+
+/* Контакты */
+.footer-contact {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-contact h4 {
+  margin-bottom: 10px;
+  color: #f4f4f4;
+  font-size: 1.2rem;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Социальные сети */
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-social h4 {
+  margin-bottom: 10px;
+  color: #f4f4f4;
+  font-size: 1.2rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 30px;
+}
+
+.social-icons img {
+  width: 100%;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
+}
+
+.social-icons a:hover img {
+  filter: brightness(0) invert(0.6);
+}
+
+/* Нижняя часть футера */
+.footer-bottom {
+  margin-top: 40px;
+  padding: 20px 0;
+  background-color: #111;
+  color: #777;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+
+.performance-detail-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 150px 20px;
+}
+
+.left-column {
+  width: 65%;
+}
+
+.right-column {
+  width: 30%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.left-column h1 {
+  font-size: 2.0rem;
+  font-weight: 400; /* Обновлен вес */
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.left-column .subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 300; /* Обновлен вес */
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-size: 1.8vw;
+  font-weight: 400; /* Обновлен вес */
+  color: #da291c;
+  margin-bottom: 15px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.image-carousel {
+  margin-bottom: 80px;
+}
+
+.image-carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.right-column h2 {
+  font-size: 1.8rem;
+  font-weight: 300; /* Обновлен вес */
+  margin-bottom: 20px;
+}
+
+.details-section {
+  margin-bottom: 20px;
+}
+
+.details-section h3 {
+  font-size: 1.4rem;
+  font-weight: 400; /* Обновлен вес */
+  color: #da291c;
+}
+
+.details-section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .performance-detail-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .right-column {
+    margin-top: 30px;
+  }
+}
+
+.show-more-button {
+  background-color: #da291c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.show-more-button:hover {
+  background-color: #b51f16;
+}
+
+.ticket-button-container {
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+}
+
+.buy-ticket-button {
+  padding: 15px 30px;
+  background-color: white;
+  color: #da291c;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: 2px solid #da291c;
+  transition: 0.3s ease;
+}
+
+.buy-ticket-button:hover {
+  background-color: #b51f16;
+  color: white;
+}
+
+
+.repertoire-container {
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.repertoire-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  /* font-family: 'TitilliumWebBold', sans-serif; */
+  font-weight: 400;
+  padding-top: 180px;
+  text-align: left;
+}
+
+.performances-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  /* padding: px; */
+}
+
+
+
+.performance-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.performance-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.performance-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+  /* font-family: 'TitilliumWebBold', sans-serif; */
+}
+
+.performance-date,
+.performance-duration,
+.performance-author,
+.performance-subtitle {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-family: 'TitilliumWebRegular', sans-serif;
+  color: #555;
+}
+
+.buy-ticket-button {
+  padding: 10px 20px;
+  background-color: #da291c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* font-family: 'TitilliumWebBold', sans-serif; */
+  transition: background-color 0.3s ease;
+}
+
+.buy-ticket-button:hover {
+  background-color: #b51f16;
+}
+
+
+.detail-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.performance-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  /* font-family: 'TitilliumWebBold', sans-serif; */
+}
+
+.performance-slider {
+  margin-bottom: 40px;
+}
+
+.slider-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.performers-section, .creatives-section {
+  margin-top: 40px;
+}
+
+.performers-list, .creatives-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.performers-list li, .creatives-list li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  /* font-family: 'TitilliumWebRegular', sans-serif; */
+}
+
+.creatives-list li strong {
+  /* font-family: 'TitilliumWebBold', sans-serif; */
+}
+
+@media (max-width: 768px) {
+  .performance-title {
+    font-size: 2rem;
+  }
+
+  .performers-list li, .creatives-list li {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+/* Основные стили для страницы About */
+.about-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: left;
+  background-color: #ffffff;
+}
+
+.about-page-container h1, .about-page-container h2 {
+  color: #da291c;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.about-page-container h1 {
+  font-size: 2.5rem;
+}
+
+.about-page-container h2 {
+  font-size: 2rem;
+}
+
+.about-page-container p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Стили для текста и разделов */
+.about-intro {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.about-history {
+  margin-bottom: 40px;
+}
+
+.about-museum {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .about-page-container h1, .about-page-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-page-container p {
+    font-size: 1rem;
+  }
+}
+
+/* Кнопка для подробной информации */
+.read-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #da291c;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #b51f16;
+}
+
+
+.team-member h3 {
+  /* font-family: 'TitilliumWebBold', sans-serif; */
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.team-member p {
+  font-family: 'TitilliumWebRegular', sans-serif;
+  color: #666;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-page-container {
+    padding: 20px;
+  }
+
+  .team-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Для мобильной версии */
+@media (max-width: 768px) {
+
+  /* Навбар */
+  .navbar {
+    flex-direction: row;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: absolute;
+  }
+
+
+  .navbar-logo img {
+    width: 160px;
+  }
+
+  .nav-selectors {
+    margin-top: 20px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navbar-menu {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .menu-button {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 0;
+  }
+
+  .back-img img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .content p {
+    font-size: 1.2rem;
+  }
+
+  .content button {
+    font-size: 1rem;
+    color:#b51f16;
+    border: 1px solid #b51f16;
+  }
+
+  /* Информационные секции */
+  .info-section {
+    padding: 50px 20px;
+  }
+
+  .info-content {
+    text-align: center;
+  }
+
+  .info-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+  }
+
+  .info-section p {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+
+  .read-more-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  /* Контейнер текста и изображения */
+  .text-and-image-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .text-content {
+    margin-bottom: 20px;
+  }
+
+  .image-content img {
+    width: 100%;
+    height: auto;
+  }
+  .performances-section h2{
+    font-size: 1.1rem;
+  }
+  .backstages-section h2{
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+  /* Слайдеры */
+  .performances-section, .backstages-section {
+    padding: 50px 20px;
+  }
+
+  .performance-slide, .backstage-slide {
+    max-width: 100%;
+  }
+
+  .performance-card, .backstage-card {
+    margin: 0 auto;
+  }
+
+  .performance-image, .backstage-image {
+    height: 150px;
+  }
+
+  /* Футер */
+  .footer {
+    padding: 20px 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+
+  .footer-description {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-links, .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .footer-links ul, .footer-contact p {
+    text-align: center;
+  }
+
+  .footer-links h4, .footer-contact h4 {
+    text-align: center;
+  }
+
+  /* Нижняя часть футера */
+  .footer-bottom {
+    padding: 10px 0;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+
+  /* Кнопка покупки билетов */
+  .buy-ticket-button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+}
+
+.repertoire-detail-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.repertoire-performance-title {
+  margin-top: 180px;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: left;
+  /* font-family: 'Arial', sans-serif; */
+  color: #1a1a1a; /* Основной цвет заголовков */
+  font-weight: 400;
+}
+
+.repertoire-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Слайдер с изображениями */
+.repertoire-performance-slider {
+  width: 60%;
+  margin-bottom: 40px;
+}
+
+.repertoire-slider-image {
+  width: 100%;
+  margin: auto;
+}
+
+.repertoire-slider-image img {
+  width: 100%;
+  height: auto;
+  /* border-radius: 10px; */
+}
+
+/* Секция исполнителей */
+.repertoire-performers-section {
+  width: 35%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.repertoire-performers-section h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #da291c; /* Основной цвет заголовков */
+  margin-bottom: 20px;
+}
+
+.repertoire-performers-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.repertoire-performer-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Секция креативной команды */
+.repertoire-creatives-section {
+  margin-top: 40px;
+}
+
+.repertoire-creatives-section h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #da291c; /* Основной цвет заголовков */
+  margin-bottom: 20px;
+}
+
+.repertoire-creatives-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.repertoire-creative-card {
+  background-color: #ffffff; /* Убрали голубой цвет, заменили на нейтральный */
+  border-radius: 10px;
+  padding: 15px;
+  flex-basis: 48%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.repertoire-creative-card strong {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Адаптивная верстка */
+@media (max-width: 768px) {
+  .repertoire-content {
+    flex-direction: column;
+  }
+
+  .repertoire-performance-slider {
+    width: 100%;
+  }
+
+  .repertoire-performers-section {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .repertoire-creative-card {
+    flex-basis: 100%;
+  }
+}
+
+
+
+.backstage-detail-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 150px 20px;
+}
+
+.left-column {
+  width: 65%;
+}
+
+.right-column {
+  width: 30%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.left-column h1 {
+  font-size: 2.0rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  margin-bottom: 40px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-size: 1.8vw;
+  font-weight: 400;
+  color: #da291c;
+  margin-bottom: 15px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.right-column h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.details-section {
+  margin-bottom: 20px;
+}
+
+.details-section h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #da291c;
+}
+
+.details-section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.backstage-carousel-desc{
+  padding-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .backstage-detail-container {
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 180px;
+  }
+
+  .section h2 {
+    font-size: 5vw;
+    font-weight: 400;
+    color: #da291c;
+    margin-bottom: 15px;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .right-column {
+    margin-top: 30px;
+  }
+}
+
+
+/* Carousel Styles */
+.backstage-carousel {
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.backstage-carousel-slide {
+  position: relative;
+  text-align: center;
+}
+
+.backstage-carousel-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
